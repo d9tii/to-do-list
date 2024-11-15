@@ -1,6 +1,7 @@
 let addToDoButton = document.getElementById('addToDo');
 let toDoContainer = document.getElementById('todocontainer');
 let inputField = document.getElementById('inputField');
+let removebutton = document.getElementById('btn-remove');
 
 addToDoButton.addEventListener('click', function(){
     var paragraph = document.createElement('p');
@@ -11,7 +12,7 @@ addToDoButton.addEventListener('click', function(){
     paragraph.addEventListener('click', function(){
         paragraph.style.textDecoration = "line-through"
     })
-    paragraph.addEventListener('dblclick', function(){
-        toDoContainer.removeChild(paragraph);
+    removebutton.addEventListener('click', function(){
+        paragraph.innerText = toDoContainer.removeChild(paragraph);
     })
 })
